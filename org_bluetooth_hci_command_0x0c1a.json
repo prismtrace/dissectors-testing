@@ -14,5 +14,6 @@
         "3": "Inquiry Scan Enabled. Page Scan Enabled."
       }
     }
-  ]
+  ],
+  "summaryField": "scan_enable"
 }

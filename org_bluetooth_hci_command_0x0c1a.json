@@ -4,11 +4,15 @@
   "enabled": true,
   "schema": [
     {
-      "name": "Status",
-      "type": "ref",
-      "id": "status",
-      "refUri": "org.bluetooth.hci.status_codes"
+      "name": "Scan Enable",
+      "type": "u8",
+      "id": "scan_enable",
+      "map": {
+        "0": "No Scans Enabled (default)",
+        "1": "Inquiry Scan Enabled. Page Scan Disabled.",
+        "2": "Inquiry Scan Disabled. Page Scan Enabled.",
+        "3": "Inquiry Scan Enabled. Page Scan Enabled."
+      }
     }
-  ],
-  "summaryField": "status"
+  ]
 }

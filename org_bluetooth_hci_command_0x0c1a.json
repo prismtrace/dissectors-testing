@@ -1,0 +1,14 @@
+{
+  "name": "Write Scan Enable",
+  "targetUri": "org.bluetooth.hci.command.0x0C1A",
+  "enabled": true,
+  "schema": [
+    {
+      "name": "Status",
+      "type": "ref",
+      "id": "status",
+      "refUri": "org.bluetooth.hci.status_codes"
+    }
+  ],
+  "summaryField": "status"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "HCI Disconnect",
+  "targetUri": "org.bluetooth.hci.command.0x0406",
+  "enabled": true,
+  "schema": [
+    {
+      "name": "Handle",
+      "type": "u16"
+    },
+    {
+      "name": "Reason",
+      "type": "u8",
+      "id": "Reason",
+      "map": {
+        "5": "Authentication Failure",
+        "19": "Remote User Terminated Connection",
+        "20": "Remote Device Terminated Connection Due To Low Resources",
+        "21": "Remote Device Terminated Connection Due To Power Off ",
+        "26": "Unsupported Remote Feature Error Code ",
+        "41": "Pairing With Unit Key Not Supported Error ",
+        "59": "Unacceptable Connection Parameters Error Code"
+      }
+    }
+  ],
+  "summaryField": "Reason"
+}

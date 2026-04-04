@@ -1,0 +1,228 @@
+{
+  "name": "ASCS Control Point",
+  "targetUri": "org.bluetooth.gatt.uuid.0x2BC6",
+  "enabled": true,
+  "condition": {
+    "attOpcodes": [
+      2
+    ]
+  },
+  "schema": [
+    {
+      "name": "Opcode",
+      "type": "u8",
+      "id": "op",
+      "map": {
+        "1": "Config Codec",
+        "2": "Config Qos",
+        "3": "Enable",
+        "4": "Receiver Start Ready",
+        "5": "Disable",
+        "6": "Receiver Stop Ready",
+        "7": "Update Metadata",
+        "8": "Release",
+        "9": "Fast Enable"
+      }
+    },
+    {
+      "name": "Num ASEs",
+      "type": "u8",
+      "id": "num_ases"
+    },
+    {
+      "name": "ASE Loop",
+      "type": "array",
+      "count": "num_ases",
+      "itemSchema": [
+        {
+          "name": "ASE ID",
+          "type": "u8",
+          "id": "ase_id"
+        },
+        {
+          "type": "switch",
+          "switchKey": "op",
+          "cases": {
+            "1": [
+              {
+                "name": "Target Latency",
+                "type": "u8",
+                "map": {
+                  "1": "Low Latency",
+                  "2": "Balanced",
+                  "3": "High Reliability"
+                }
+              },
+              {
+                "name": "Target PHY",
+                "type": "u8",
+                "map": {
+                  "1": "1M",
+                  "2": "2M",
+                  "3": "Coded"
+                }
+              },
+              {
+                "name": "Codec ID",
+                "type": "bytes",
+                "length": 5
+              },
+              {
+                "name": "Codec Specific Config Length",
+                "type": "u8",
+                "id": "cfg_len"
+              },
+              {
+                "type": "ref",
+                "refUri": "org.bluetooth.schema.ltv.codec_config",
+                "length": "cfg_len"
+              }
+            ],
+            "2": [
+              {
+                "name": "CIG ID",
+                "type": "u8",
+                "id": "cig_id"
+              },
+              {
+                "name": "CIS ID",
+                "type": "u8",
+                "id": "cis_id"
+              },
+              {
+                "name": "SDU Interval",
+                "type": "u24",
+                "id": "sdu_interval"
+              },
+              {
+                "name": "Framing",
+                "type": "u8",
+                "map": {
+                  "0": "Unframed",
+                  "1": "Framed"
+                }
+              },
+              {
+                "name": "PHY",
+                "type": "u8",
+                "map": {
+                  "1": "1M",
+                  "2": "2M",
+                  "3": "Coded"
+                }
+              },
+              {
+                "name": "Max SDU",
+                "type": "u16"
+              },
+              {
+                "name": "Retransmission Num",
+                "type": "u8"
+              },
+              {
+                "name": "Max Transport Latency",
+                "type": "u16"
+              },
+              {
+                "name": "Presentation Delay",
+                "type": "u24",
+                "id": "presentation_delay"
+              }
+            ],
+            "3": [
+              {
+                "name": "Metadata Length",
+                "type": "u8",
+                "id": "meta_len"
+              },
+              {
+                "type": "ref",
+                "refUri": "org.bluetooth.schema.ltv.metadata",
+                "length": "meta_len"
+              }
+            ],
+            "7": [
+              {
+                "name": "Metadata Length",
+                "type": "u8",
+                "id": "meta_len"
+              },
+              {
+                "type": "ref",
+                "refUri": "org.bluetooth.schema.ltv.metadata",
+                "length": "meta_len"
+              }
+            ],
+            "9": [
+              {
+                "name": "Codec Id",
+                "type": "bytes",
+                "length": 5
+              },
+              {
+                "name": "CIG Id",
+                "type": "u8"
+              },
+              {
+                "name": "CIS Id",
+                "type": "u8"
+              },
+              {
+                "name": "Config Id",
+                "type": "u8"
+              },
+              {
+                "name": "Codec Specific Config Length",
+                "type": "u8",
+                "id": "cfg_len"
+              },
+              {
+                "name": "Codec Specific Configuration",
+                "type": "ref",
+                "refUri": "org.bluetooth.schema.ltv.codec_config"
+              },
+              {
+                "name": "SDU Interval",
+                "type": "u24"
+              },
+              {
+                "name": "Framing",
+                "type": "u8"
+              },
+              {
+                "name": "PHY",
+                "type": "u8"
+              },
+              {
+                "name": "Max SDU",
+                "type": "u16"
+              },
+              {
+                "name": "Rtn",
+                "type": "u8"
+              },
+              {
+                "name": "Max Transport Latency",
+                "type": "u16"
+              },
+              {
+                "name": "Presentation Delay",
+                "type": "u24"
+              },
+              {
+                "name": "Metadata Length",
+                "type": "u8",
+                "id": "meta_size"
+              },
+              {
+                "name": "Metadata",
+                "type": "ref",
+                "refUri": "org.bluetooth.schema.ltv.metadata"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

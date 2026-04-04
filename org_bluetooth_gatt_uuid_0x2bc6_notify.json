@@ -1,0 +1,79 @@
+{
+  "name": "ASCS Control Point (Notify)",
+  "targetUri": "org.bluetooth.gatt.uuid.0x2BC6.notify",
+  "enabled": true,
+  "condition": {
+    "attOpcodes": [
+      2
+    ]
+  },
+  "schema": [
+    {
+      "name": "Opcode",
+      "type": "u8",
+      "map": {
+        "1": "Config Codec",
+        "2": "Config Qos",
+        "3": "Enable",
+        "4": "Receiver Start Ready",
+        "5": "Disable",
+        "6": "Receiver Stop Ready",
+        "7": "Update Metadata",
+        "8": "Release",
+        "9": "Fast Enable"
+      }
+    },
+    {
+      "name": "Num ASEs",
+      "type": "u8",
+      "id": "num_ases"
+    },
+    {
+      "name": "Responses",
+      "type": "array",
+      "count": "num_ases",
+      "itemSchema": [
+        {
+          "name": "ASE ID",
+          "type": "u8"
+        },
+        {
+          "name": "Response Code",
+          "type": "u8",
+          "map": {
+            "0": "Success",
+            "1": "Unsupported Opcode",
+            "2": "Invalid ASE_ID",
+            "3": "Invalid ASE State",
+            "4": "Invalid Metadata Length",
+            "5": "Invalid Metadata",
+            "6": "Insufficient Resources",
+            "7": "Unspecified Error"
+          }
+        },
+        {
+          "name": "Reason",
+          "type": "u8",
+          "map": {
+            "0": "None",
+            "1": "Unsupported Audio Config",
+            "2": "Unsupported Sampling Freq",
+            "3": "Unsupported Frame Dur",
+            "4": "Unsupported Allocation",
+            "5": "Unsupported Octets",
+            "6": "Unsupported Codec Caps",
+            "7": "Unsupported Metadata",
+            "8": "Invalid Codec Caps",
+            "9": "Invalid Metadata",
+            "10": "Invalid Context",
+            "11": "Invalid Sampling Freq",
+            "12": "Invalid Frame Dur",
+            "13": "Invalid Allocation",
+            "14": "Invalid Octets"
+          }
+        }
+      ]
+    }
+  ],
+  "summaryField": "Response Code"
+}

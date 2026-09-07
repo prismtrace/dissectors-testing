@@ -1,0 +1,29 @@
+{
+  "name": "Command Complete (hci Le Set Cig Parameters)",
+  "targetUri": "org.bluetooth.hci.command_complete.0x2062",
+  "enabled": true,
+  "schema": [
+    {
+      "name": "Status",
+      "type": "ref",
+      "id": "Status",
+      "refUri": "org.bluetooth.hci.status_codes"
+    },
+    {
+      "name": "Connection Handle",
+      "type": "u16",
+      "id": "Connection Handle"
+    },
+    {
+      "name": "CIS Count",
+      "type": "u8",
+      "id": "CIS count"
+    },
+    {
+      "name": "CIG Id",
+      "type": "u8",
+      "id": "CIG_ID"
+    }
+  ],
+  "summaryField": "Status"
+}

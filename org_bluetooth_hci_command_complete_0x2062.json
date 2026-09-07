@@ -20,7 +20,7 @@
       "id": "CIS count"
     },
     {
-      "name": "Field",
+      "name": "Connection Handles",
       "type": "array",
       "itemSchema": [
         {

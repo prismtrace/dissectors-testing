@@ -4,15 +4,15 @@
   "enabled": true,
   "schema": [
     {
-      "name": "Status",
+      "name": "",
       "type": "ref",
       "id": "Status",
       "refUri": "org.bluetooth.hci.status_codes"
     },
     {
-      "name": "Connection Handle",
-      "type": "u16",
-      "id": "Connection Handle"
+      "name": "CIG Id",
+      "type": "u8",
+      "id": "CIG_ID"
     },
     {
       "name": "CIS Count",
@@ -20,9 +20,14 @@
       "id": "CIS count"
     },
     {
-      "name": "CIG Id",
-      "type": "u8",
-      "id": "CIG_ID"
+      "name": "Field",
+      "type": "array",
+      "itemSchema": [
+        {
+          "name": "Connection Handle",
+          "type": "u16"
+        }
+      ]
     }
   ],
   "summaryField": "Status"

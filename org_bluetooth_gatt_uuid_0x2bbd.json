@@ -9,7 +9,7 @@
   },
   "schema": [
     {
-      "name": "Field",
+      "name": "Connection Handles",
       "type": "array",
       "itemSchema": [
         {

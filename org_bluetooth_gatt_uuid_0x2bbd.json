@@ -1,0 +1,66 @@
+{
+  "name": "Call State",
+  "targetUri": "org.bluetooth.gatt.uuid.0x2BBD",
+  "enabled": true,
+  "condition": {
+    "attOpcodes": [
+      2
+    ]
+  },
+  "schema": [
+    {
+      "name": "Field",
+      "type": "array",
+      "itemSchema": [
+        {
+          "name": "Index",
+          "type": "u8"
+        },
+        {
+          "name": "Call State",
+          "type": "u8",
+          "map": {
+            "0": "Incoming",
+            "1": "Dialing",
+            "2": "Alerting",
+            "3": "Active",
+            "4": "Locally Held",
+            "5": "Remotely Held",
+            "6": "Locally And Remotely Held"
+          }
+        },
+        {
+          "name": "Call Flags",
+          "type": "u8",
+          "bitFields": [
+            {
+              "name": "Bit 0",
+              "width": 1,
+              "map": {
+                "0": "Call is an incoming call",
+                "1": "Call is an outgoing call"
+              }
+            },
+            {
+              "name": "Bit 1",
+              "width": 1,
+              "map": {
+                "0": "Not withheld",
+                "1": "Withheld"
+              }
+            },
+            {
+              "name": "Bit 2",
+              "width": 1,
+              "map": {
+                "0": " Provided by network",
+                "1": "Withheld by network"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summaryField": "Call State"
+}

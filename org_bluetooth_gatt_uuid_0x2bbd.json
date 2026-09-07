@@ -9,7 +9,7 @@
   },
   "schema": [
     {
-      "name": "Connection Handles",
+      "name": "Call States",
       "type": "array",
       "itemSchema": [
         {

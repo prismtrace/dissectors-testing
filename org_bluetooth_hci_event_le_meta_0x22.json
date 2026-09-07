@@ -1,0 +1,78 @@
+{
+  "name": "Le Biginfo Advertising Report",
+  "targetUri": "org.bluetooth.hci.event.le_meta.0x22",
+  "enabled": true,
+  "schema": [
+    {
+      "name": "Sync Handle",
+      "type": "u16",
+      "id": "Sync Handle"
+    },
+    {
+      "name": "Bis Num",
+      "type": "u8",
+      "id": "BIS Num"
+    },
+    {
+      "name": "Nse",
+      "type": "u8",
+      "id": "NSE"
+    },
+    {
+      "name": "Iso Interval",
+      "type": "u16",
+      "id": "ISO Interval"
+    },
+    {
+      "name": "Bn",
+      "type": "u8"
+    },
+    {
+      "name": "Pto",
+      "type": "u8"
+    },
+    {
+      "name": "Irc",
+      "type": "u8"
+    },
+    {
+      "name": "Max Pdu",
+      "type": "u16"
+    },
+    {
+      "name": "SDU Interval",
+      "type": "u24"
+    },
+    {
+      "name": "Max SDU",
+      "type": "u16"
+    },
+    {
+      "name": "PHY",
+      "type": "u8",
+      "map": {
+        "1": "LE 1m PHY",
+        "2": "LE 2m PHY",
+        "3": "LE Coded PHY",
+        "5": "LE Hdt PHY"
+      }
+    },
+    {
+      "name": "Framing",
+      "type": "u8",
+      "map": {
+        "0": "Unframed Pdus",
+        "1": "Framed Pdus, Segmentable Mode",
+        "2": "Framed Pdus, Unsegmented Mode"
+      }
+    },
+    {
+      "name": "Encryption",
+      "type": "u8",
+      "map": {
+        "0": "Unencrypted",
+        "1": "Encrypted"
+      }
+    }
+  ]
+}
